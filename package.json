@@ -4,8 +4,8 @@
   "description": "A simple dropdown component",
   "main": "dropdown.tsx",
   "scripts": {
-    "clean": "rd /s /q dist",
-    "build": "yarn tsc && cp package.json README.md ./dist"
+    "clean": "del dist",
+    "build": "yarn clean && tsc && copy README.md dist && copy package.json dist"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Marcat-A/react-marcat-dropdown#readme",
   "devDependencies": {
     "@types/react": "^17.0.14",
-    "@types/react-dom": "^18.0.6",
+    "@types/react-dom": "^18.2.1",
     "@types/react-transition-group": "^4.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
