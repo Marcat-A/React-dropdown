@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 class DropdownInputProps {
   name?: string;
+  fontSize?: string;
+  personnalId?: string;
   data?: string[];
   defaultText?: string;
   color?: string;
@@ -15,6 +17,7 @@ class DropdownInputProps {
   selectBoxColor?: string;
   selectBoxOptionsColor?: string;
   labelled?: boolean;
+  required?: boolean;
 }
 
 const Select = styled.select<DropdownInputProps>`
@@ -28,7 +31,7 @@ const Select = styled.select<DropdownInputProps>`
     props.borderRadius ? props.borderRadius : "5px"};
   outline: none;
   color: ${(props) => (props.color ? props.color : "rgba(0,0,0,0.25)")};
-  font-size: 1em;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "1em")};
   ::-webkit-scrollbar {
     width: ${(props) => (props.scrollBarWidth ? props.scrollBarWidth : "8px")};
   }
@@ -63,6 +66,8 @@ const Select = styled.select<DropdownInputProps>`
 const DropdownInput: React.FC<DropdownInputProps> = ({
   name,
   data,
+  fontSize,
+  personnalId,
   defaultText,
   color,
   borderColor,
@@ -74,6 +79,7 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
   selectBoxColor,
   selectBoxOptionsColor,
   labelled,
+  required,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
@@ -91,6 +97,7 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
       <Select
         data={data}
         name={name}
+        fontSize={fontSize}
         color={!selectedOption ? "rgba(0,0,0,0.25)" : color}
         borderColor={borderColor}
         scrollBarBackgroundColor={scrollBarBackgroundColor}
@@ -102,6 +109,8 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
         selectBoxOptionsColor={selectBoxOptionsColor}
         onChange={handleChange}
         value={selectedOption || ""}
+        id={personnalId}
+        required={required ? required : false}
       >
         <option>
           {defaultText ? defaultText : "-- Please select an option --"}

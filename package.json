@@ -1,6 +1,6 @@
 {
   "name": "react-marcat-dropdown",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "A simple dropdown component",
   "main": "dropdown.tsx",
   "scripts": {
@@ -9,17 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Marcat-A/react-marcat-dropdown.git"
+    "url": "git+https://github.com/Marcat-A/React-dropdown.git"
   },
   "keywords": [
     "react",
-    "typescript"
+    "typescript",
+    "dropdown"
   ],
   "author": {
     "name": "Anthony Marcato"
   },
   "license": "ISC",
-  "homepage": "https://github.com/Marcat-A/react-marcat-dropdown#readme",
+  "homepage": "https://github.com/Marcat-A/React-dropdown#readme",
   "devDependencies": {
     "@types/react": "^17.0.14",
     "@types/react-dom": "^18.2.1",

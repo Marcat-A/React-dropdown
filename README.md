@@ -1,5 +1,18 @@
 # React-Marcat-Dropdown
 
+## Requirements
+
+Before getting started, make sure you have the following installed:
+
+- Node.js: [Download and install Node.js](https://nodejs.org) (v15min)
+- React : [Install and install React](https://react.dev)
+
+## Used
+
+Styled-component was used on this project, please check if there are any compatibility issues before importing the component.
+
+## Installation
+
 Install this package:
 
 ```shell
@@ -9,7 +22,7 @@ npm install react-marcat-dropdown
 Import the DropdownInput component:
 
 ```js
-import { DropdownInput } from "react-marcat-dropdown";
+import DropdownInput  from "react-marcat-dropdown/dropdown";
 ```
 
 ## Description
@@ -19,7 +32,9 @@ This component renders a custom dropdown input that can be used to select one op
 
 - `name`: string (required) - The name of the input.
 - `data`: string[] (required) - An array of strings that represents the list of options.
+- `personnalId`: string (optional) - Id for the selector.
 - `defaultText`: string (optional) - The default text that appears in the dropdown before an option is selected.
+- `fontSize`: string (optional) - The font size for the dropdown. Defaults to "1em".
 - `color`: string (optional) - The color of the selected option text. Defaults to "rgba(0,0,0,0.25)".
 - `borderColor`: string (optional) - The color of the dropdown border. Defaults to "1px solid rgba(0,0,0,0.25)".
 - `borderRadius`: string (optional) - The border radius of the dropdown. Defaults to "5px".
@@ -43,7 +58,7 @@ The component uses the `useState` hook to keep track of the selected option. Whe
 
 ```tsx
 import React from 'react';
-import DropdownInput from './DropdownInput';
+import DropdownInput  from "react-marcat-dropdown/dropdown";
 
 const options = ['Option 1', 'Option 2', 'Option 3'];
 
@@ -62,7 +77,10 @@ const MyComponent = () => {
       scrollBarRadius="20px"
       selectBoxColor="#ebebeb"
       selectBoxOptionsColor="#333333"
-      labelled={true}
+      labelled
+      personnalId="selector"
+      fontSize="1em"
+      required
     />
   );
 };
